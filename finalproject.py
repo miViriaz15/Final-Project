@@ -14,7 +14,7 @@ white = Color(0xFFFFFF, 1.0)
 thinlinewhite = LineStyle(1, white)
 thinlineblack = LineStyle(1, black)
 
-Sprite(PolygonAsset([(5,5),(20,12),(5,19),(10,12),(5,5)],thinlineblack, white))
+Sprite(PolygonAsset([(5,5),(19,13),(5,21),(10,13),(5,5)],thinlineblack, white))
 
 '''
 class Turtle(Sprite):
@@ -28,3 +28,5 @@ class Turtle(Sprite):
 
 myapp.run()
 
+
+__main__
