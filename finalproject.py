@@ -37,8 +37,9 @@ class Turtle(Sprite):
         startturtle=PolygonAsset([(5,5),(20,13),(5,21),(10,13),(5,5)],self.thinlineblack, self.black)
         super().__init__(startturtle, screencenter)
     def right(x):
-        startturtle.rotation(x*pi/180)
-        
+        startturtle.rotation=(x*pi/180)
+    def rt(x):
+        return right(x)
     
     #position, direction, penstate, color
 Screen()
