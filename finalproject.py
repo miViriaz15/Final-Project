@@ -15,7 +15,7 @@ from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Fra
 #thinlinewhite = LineStyle(1, white)
 #thinlineblack = LineStyle(1, black)
 
-#Sprite(PolygonAsset([(5,5),(19,13),(5,21),(10,13),(5,5)],thinlineblack, black))
+#Sprite(PolygonAsset([(5,5),(20,13),(5,21),(10,13),(5,5)],thinlineblack, black))
 
 class Screen:
     app=None
@@ -33,7 +33,7 @@ class Turtle(Sprite):
         width=Screen.app.width
         height=Screen.app.height
         screencenter=(width/2,height/2)
-        startturtle=PolygonAsset([(5,5),(19,13),(5,21),(10,13),(5,5)],self.thinlineblack, self.white)
+        startturtle=PolygonAsset([(5,5),(20,13),(5,21),(10,13),(5,5)],self.thinlineblack, self.black)
         super().__init__(startturtle, screencenter)
     
     #position, direction, penstate, color
