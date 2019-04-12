@@ -4,6 +4,7 @@ https://docs.python.org/3.3/library/turtle.html?highlight=turtle
 '''
 
 from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Frame, PolygonAsset, EllipseAsset, CircleAsset
+from math import pi
 
 #myapp = App()
 #defining colors
@@ -35,10 +36,14 @@ class Turtle(Sprite):
         screencenter=(width/2,height/2)
         startturtle=PolygonAsset([(5,5),(20,13),(5,21),(10,13),(5,5)],self.thinlineblack, self.black)
         super().__init__(startturtle, screencenter)
+    def right(x):
+        startturtle.rotation(x*pi/180)
+        
     
     #position, direction, penstate, color
 Screen()
-Turtle()
+alex=Turtle()
+alex.right(90)
 
 '''myapp.run()
 
