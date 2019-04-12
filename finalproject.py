@@ -33,8 +33,8 @@ class Turtle(Sprite):
         width=Screen.app.width
         height=Screen.app.height
         screencenter=(width/2,height/2)
-        startturtle=PolygonAsset([(5,5),(25,10),(5,15),(10,10),(5,5)],self.thinlineblack, self.white)
-        super().__init__(screencenter, startturtle)
+        startturtle=PolygonAsset([(5,5),(19,13),(5,21),(10,13),(5,5)],self.thinlineblack, self.white)
+        super().__init__(startturtle, screencenter)
     
     #position, direction, penstate, color
 Screen()
