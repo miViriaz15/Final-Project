@@ -41,10 +41,42 @@ class Turtle(Sprite):
         super().__init__(startturtle, screencenter)
 
     def right(self,x):
-        '''rotates turtle x degrees right'''
+        ''' Turn turtle right by angle units.
+    
+        Aliases: right | rt
+    
+        Argument:
+        angle -- a number (integer or float)
+    
+        Turn turtle right by angle units. (Units are by default degrees,
+        but can be set via the degrees() and radians() functions.)
+        Angle orientation depends on mode. (See this.)
+    
+        Example (for a Turtle instance named turtle):
+        >>> turtle.heading()
+        22.0
+        >>> turtle.right(45)
+        >>> turtle.heading()
+        337.0'''
         self.rotation = self.rotation - x*pi/180
     def rt(self,x):
-        '''rotates turtle x degrees right'''
+        ''' Turn turtle right by angle units.
+    
+        Aliases: right | rt
+    
+        Argument:
+        angle -- a number (integer or float)
+    
+        Turn turtle right by angle units. (Units are by default degrees,
+        but can be set via the degrees() and radians() functions.)
+        Angle orientation depends on mode. (See this.)
+    
+        Example (for a Turtle instance named turtle):
+        >>> turtle.heading()
+        22.0
+        >>> turtle.right(45)
+        >>> turtle.heading()
+        337.0'''
         return self.right(x)
 
     def left(self,x):
