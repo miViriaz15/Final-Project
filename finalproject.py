@@ -36,15 +36,25 @@ class Turtle(Sprite):
         screencenter=(width/2,height/2)
         startturtle=PolygonAsset([(5,5),(20,13),(5,21),(10,13),(5,5)],self.thinlineblack, self.black)
         super().__init__(startturtle, screencenter)
-    def right(x):
-        startturtle.rotation=(x*pi/180)
-    def rt(x):
-        return right(x)
+
+    def right(self,x):
+        '''rotates turtle x degrees right'''
+        self.rotation = self.rotation - x*pi/180
+    def rt(self,x):
+        '''rotates turtle x degrees right'''
+        return self.right(x)
+
+    def left(self,x):
+        '''rotates turtle x degrees left'''
+        self.rotation = self.rotation + x*pi/180
+    def lt(self, x)
+        '''rotates turtle x degrees left'''
+        return self.left(x)
     
     #position, direction, penstate, color
 Screen()
 alex=Turtle()
-alex.right(90)
+alex.rt(90)
 
 '''myapp.run()
 
