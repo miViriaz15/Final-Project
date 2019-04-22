@@ -33,7 +33,7 @@ class Turtle(Sprite):
     def __init__(self):
         width=Screen.app.width
         height=Screen.app.height
-        screencenter=(width/2,height/2)
+        screencenter=(width/2,height/2)  #finds a tuple for the center of the screen
         startturtle=PolygonAsset([(5,5),(20,13),(5,21),(10,13),(5,5)],self.thinlineblack, self.black)
         super().__init__(startturtle, screencenter)
 
