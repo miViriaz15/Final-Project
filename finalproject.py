@@ -19,6 +19,9 @@ from math import pi
 #Sprite(PolygonAsset([(5,5),(20,13),(5,21),(10,13),(5,5)],thinlineblack, black))
 
 class Screen:
+    '''Return the singleton screen object.
+    If none exists at the moment, create a new one and return it,
+    else return the existing one'''
     app=None
     def __init__(self):
         Screen.app=App()
@@ -54,7 +57,7 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen()
 alex=Turtle()
-alex.rt(90)
+alex.lt(90)
 
 '''myapp.run()
 
