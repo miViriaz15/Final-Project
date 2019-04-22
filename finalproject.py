@@ -47,7 +47,7 @@ class Turtle(Sprite):
     def left(self,x):
         '''rotates turtle x degrees left'''
         self.rotation = self.rotation + x*pi/180
-    def lt(self, x)
+    def lt(self,x):
         '''rotates turtle x degrees left'''
         return self.left(x)
     
