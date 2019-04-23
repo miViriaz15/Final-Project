@@ -87,7 +87,8 @@ class Turtle(Sprite):
         337.0'''
         self.rotationgoal = self.rotation - x*pi/180
         self.vr = -0.05
-        self.commandlist.append((right,x))
+        self.commandlist.append(("right",x))
+        
     def rt(self,x):
         ''' Turn turtle right by angle units.
     
@@ -160,8 +161,7 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen()
 alex=Turtle()
-alex.right(90)
-alex.right(300)
+alex.rt(90)
 
 print(alex.heading())
 
