@@ -45,16 +45,20 @@ class Turtle(Sprite):
         screencenter=(width/2,height/2)  #finds a tuple for the center of the screen
         startturtle=PolygonAsset([(5,5),(20,13),(5,21),(10,13),(5,5)],self.thinlineblack, self.black)
         super().__init__(startturtle, screencenter)
+        self.rotationgoal=None
         
         self.vr = 0
         self.fxcenter = 1/3
         self.fycenter = 1/2
         
     def step(self):
-        
-        self.rotation += self.vr
-        if self.rotation == self.rotationgoal:
-            self.vr=0
+        print(not self.rotationgoal is None)
+        if not self.rotationgoal is None:
+            print("hi")
+            self.rotation += self.vr
+            if self.rotation == self.rotationgoal:
+                self.vr=0
+                self.rotationgoal=None
         
     def right(self,x):
         ''' Turn turtle right by angle units.
@@ -149,8 +153,8 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen()
 alex=Turtle()
-alex.lt(90)
-alex.lt(90)
+alex.right(90)
+
 print(alex.heading())
 
 '''myapp.run()
