@@ -159,6 +159,7 @@ class Turtle(Sprite):
 Screen()
 alex=Turtle()
 alex.right(90)
+alex.right(300)
 
 print(alex.heading())
 
