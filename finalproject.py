@@ -119,12 +119,13 @@ class Turtle(Sprite):
         return self.left(x)
     
     def heading(self):
-        self.heading = self.rotation
+        return self.rotation * (180/pi)
     
     #position, direction, penstate, color
 Screen()
 alex=Turtle()
 alex.lt(90)
+print(alex.heading())
 
 '''myapp.run()
 
