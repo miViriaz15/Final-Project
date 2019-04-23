@@ -52,10 +52,15 @@ class Turtle(Sprite):
         self.fycenter = 1/2
         
     def step(self):
-        print(not self.rotationgoal is None)
         if not self.rotationgoal is None:
-            print("hi")
-            self.rotation += self.vr
+        
+            if self.rotationgoal-self.rotation < 0:
+                self.rotation += self.vr
+                if self.rotation <= self.rotationgoal:
+                    self.vr=0
+                    self.rotation=self.rotationgoal
+                    self.rotationgoal=None
+             
             if self.rotation == self.rotationgoal:
                 self.vr=0
                 self.rotationgoal=None
@@ -79,7 +84,7 @@ class Turtle(Sprite):
         >>> turtle.heading()
         337.0'''
         self.rotationgoal = self.rotation - x*pi/180
-        self.vr = 0.08
+        self.vr = -0.08
         
     def rt(self,x):
         ''' Turn turtle right by angle units.
