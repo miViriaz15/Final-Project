@@ -84,7 +84,7 @@ class Turtle(Sprite):
         >>> turtle.heading()
         337.0'''
         self.rotationgoal = self.rotation - x*pi/180
-        self.vr = -0.08
+        self.vr = -0.05
         
     def rt(self,x):
         ''' Turn turtle right by angle units.
