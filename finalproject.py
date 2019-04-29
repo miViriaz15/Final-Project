@@ -56,7 +56,8 @@ class Turtle(Sprite):
         self.combinedhead=0
         
     def step(self):
-        
+        self.commandlist.reverse()
+        command = self.commandlist.pop()
         
         if not self.rotationgoal is None:
         
