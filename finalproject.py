@@ -135,7 +135,10 @@ class Turtle(Sprite):
         >>> turtle.left(45)
         >>> turtle.heading()
         67.0'''
-        self.rotation = self.rotation + x*pi/180
+        self.rotationgoal = self.rotation + x*pi/180
+        self.vr = 0.05
+        self.commandlist.append(("left",x))
+        
     def lt(self,x):
         '''Turn turtle left by angle units.
     
@@ -155,6 +158,7 @@ class Turtle(Sprite):
         >>> turtle.heading()
         67.0'''
         return self.left(x)
+       
     
     def heading(self):
         return self.combinedhead 
