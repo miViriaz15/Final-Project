@@ -92,6 +92,8 @@ class Turtle(Sprite):
         self.commandlist.append(("right",x))
         
         self.combinedhead -= x
+        if self.combinedhead <0:
+            self.combinedhead=self.combinedhead%360+360
         
     def rt(self,x):
         ''' Turn turtle right by angle units.
