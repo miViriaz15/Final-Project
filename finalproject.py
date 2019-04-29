@@ -146,6 +146,12 @@ class Turtle(Sprite):
         self.vr = 0.05
         self.commandlist.append(("left",x))
         
+        self.combinedhead += x
+        if self.combinedhead < 0:
+            self.combinedhead=-(-self.combinedhead%360)+360
+        if self.combinedhead > 0:
+            self.combinedhead=self.combinedhead%360
+            
     def lt(self,x):
         '''Turn turtle left by angle units.
     
