@@ -57,6 +57,7 @@ class Turtle(Sprite):
         
     def step(self):
         
+        
         if not self.rotationgoal is None:
         
             if self.rotationgoal-self.rotation < 0:         #right turn
