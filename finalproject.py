@@ -56,16 +56,17 @@ class Turtle(Sprite):
         self.combinedhead=0
         
     def step(self):
+        
         if not self.rotationgoal is None:
         
-            if self.rotationgoal-self.rotation < 0:
+            if self.rotationgoal-self.rotation < 0:         #right turn
                 self.rotation += self.vr
                 if self.rotation <= self.rotationgoal:
                     self.vr=0
                     self.rotation=self.rotationgoal
                     self.rotationgoal=None
                     
-            if self.rotationgoal-self.rotation > 0:
+            if self.rotationgoal-self.rotation > 0:         #left turn
                 self.rotation += self.vr
                 if self.rotation >= self.rotationgoal:
                     self.vr=0
@@ -187,7 +188,7 @@ class Turtle(Sprite):
 Screen()
 alex=Turtle()
 alex.lt(650)
-
+print(alex.commandlist)
 print(alex.heading())
 
 '''myapp.run()
