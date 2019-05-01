@@ -51,13 +51,19 @@ class Turtle(Sprite):
         self.fxcenter = 1/3
         self.fycenter = 1/2
        
-        self.commandlist=[]
+        self.commandlist = []
+        self.currentcmd = None
         
         self.combinedhead=0
         
     def step(self):
-        self.commandlist.reverse()
-        command = self.commandlist.pop()
+        
+        if self.currentcmd:
+            #continue doing that thing
+        elif self.commandlist:
+            self.currentcmd = self.commandlist.pop(0)
+        
+        
         
         if not self.rotationgoal is None:
         
@@ -192,7 +198,7 @@ alex=Turtle()
 alex.lt(650)
 print(alex.commandlist)
 print(alex.heading())
-
+print(command)
 '''myapp.run()
 
 
