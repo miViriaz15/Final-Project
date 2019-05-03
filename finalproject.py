@@ -59,7 +59,6 @@ class Turtle(Sprite):
     def step(self):
         
         if self.currentcmd:
-            print(self.currentcmd)
             cmd,val = self.currentcmd
             if cmd=="right":
                 self.vr = -0.05
