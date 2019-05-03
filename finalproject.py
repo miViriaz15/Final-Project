@@ -59,7 +59,7 @@ class Turtle(Sprite):
     def step(self):
         
         if self.currentcmd:
-            if self.currentcmd = ("right",
+            pass#keep doing
         elif self.commandlist:
             self.currentcmd = self.commandlist.pop(0)
             print(self.currentcmd)
@@ -199,7 +199,7 @@ alex=Turtle()
 alex.lt(650)
 print(alex.commandlist)
 print(alex.heading())
-print(command)
+
 '''myapp.run()
 
 
