@@ -208,8 +208,9 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen()
 alex=Turtle()
-alex.lt(650)
-alex.right(90)
+alex.lt(350)
+alex.rt(30)
+alex.left(100)
 print(alex.commandlist)
 print(alex.heading())
 
