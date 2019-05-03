@@ -62,15 +62,18 @@ class Turtle(Sprite):
             print(self.currentcmd)
             cmd,val = self.currentcmd
             if cmd=="right":
-                self.rotationgoal = self.rotation - val*pi/180
                 self.vr = -0.05 
             if cmd=="left":
-                self.rotationgoal = self.rotation + val*pi/180
                 self.vr = 0.05
                     
         
         elif self.commandlist:
             self.currentcmd = self.commandlist.pop(0)
+            cmd,val = self.currentcmd
+            if cmd=="right":
+                self.rotationgoal = self.rotation - val*pi/180
+            if cmd=="left":
+                self.rotationgoal = self.rotation + val*pi/180
         
         if not self.rotationgoal is None:
             if self.rotationgoal-self.rotation < 0:         #right turn
