@@ -59,9 +59,10 @@ class Turtle(Sprite):
     def step(self):
         
         if self.currentcmd:
-            #continue doing that thing
+            if self.currentcmd = ("right",
         elif self.commandlist:
             self.currentcmd = self.commandlist.pop(0)
+            print(self.currentcmd)
         
         
         
