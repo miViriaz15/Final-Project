@@ -72,6 +72,7 @@ class Turtle(Sprite):
         elif self.commandlist:
             self.currentcmd = self.commandlist.pop(0)
             cmd,val = self.currentcmd
+            print(self.currentcmd)
             if cmd=="right":
                 self.rotationgoal = self.rotation - val*pi/180
             if cmd=="left":
@@ -208,9 +209,7 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen()
 alex=Turtle()
-alex.lt(350)
-alex.rt(30)
-alex.left(100)
+alex.rt(100)
 print(alex.commandlist)
 print(alex.heading())
 
