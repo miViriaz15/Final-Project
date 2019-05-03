@@ -202,6 +202,7 @@ class Turtle(Sprite):
 Screen()
 alex=Turtle()
 alex.lt(650)
+alex.right(90)
 print(alex.commandlist)
 print(alex.heading())
 
