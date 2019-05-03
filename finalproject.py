@@ -80,16 +80,16 @@ class Turtle(Sprite):
                         self.rotation=self.rotationgoal
                         self.rotationgoal=None
                         
-                if self.rotationgoal-self.rotation > 0:         #left turn
-                    self.rotation += self.vr
-                    if self.rotation >= self.rotationgoal:
-                        self.vr=0
-                        self.rotation=self.rotationgoal
-                        self.rotationgoal=None
-                        
-                if self.rotation == self.rotationgoal:
+            if self.rotationgoal-self.rotation > 0:         #left turn
+                self.rotation += self.vr
+                if self.rotation >= self.rotationgoal:
                     self.vr=0
+                    self.rotation=self.rotationgoal
                     self.rotationgoal=None
+                        
+            if self.rotation == self.rotationgoal:
+                self.vr=0
+                self.rotationgoal=None
             
         
         
