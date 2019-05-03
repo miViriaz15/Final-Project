@@ -59,7 +59,8 @@ class Turtle(Sprite):
     def step(self):
         
         if self.currentcmd:
-            for (i,j) in self.currentcmd:
+            print(self.currentcmd)
+            for i,j in self.currentcmd:
                 if i=="right":
                     self.rotationgoal = self.rotation - j*pi/180
                     self.vr = -0.05 
@@ -69,7 +70,7 @@ class Turtle(Sprite):
         
         elif self.commandlist:
             self.currentcmd = self.commandlist.pop(0)
-            print(self.currentcmd)
+            
         
         
         
