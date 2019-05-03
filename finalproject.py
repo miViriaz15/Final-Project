@@ -67,28 +67,29 @@ class Turtle(Sprite):
             if cmd=="left":
                 self.rotationgoal = self.rotation + val*pi/180
                 self.vr = 0.05
-                    if not self.rotationgoal is None:
+                    
         
         elif self.commandlist:
             self.currentcmd = self.commandlist.pop(0)
         
-        if self.rotationgoal-self.rotation < 0:         #right turn
-                self.rotation += self.vr
-                if self.rotation <= self.rotationgoal:
+        if not self.rotationgoal is None:
+            if self.rotationgoal-self.rotation < 0:         #right turn
+                    self.rotation += self.vr
+                    if self.rotation <= self.rotationgoal:
+                        self.vr=0
+                        self.rotation=self.rotationgoal
+                        self.rotationgoal=None
+                        
+                if self.rotationgoal-self.rotation > 0:         #left turn
+                    self.rotation += self.vr
+                    if self.rotation >= self.rotationgoal:
+                        self.vr=0
+                        self.rotation=self.rotationgoal
+                        self.rotationgoal=None
+                        
+                if self.rotation == self.rotationgoal:
                     self.vr=0
-                    self.rotation=self.rotationgoal
                     self.rotationgoal=None
-                    
-            if self.rotationgoal-self.rotation > 0:         #left turn
-                self.rotation += self.vr
-                if self.rotation >= self.rotationgoal:
-                    self.vr=0
-                    self.rotation=self.rotationgoal
-                    self.rotationgoal=None
-                    
-            if self.rotation == self.rotationgoal:
-                self.vr=0
-                self.rotationgoal=None
             
         
         
