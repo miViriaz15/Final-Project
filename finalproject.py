@@ -72,7 +72,7 @@ class Turtle(Sprite):
         elif self.commandlist:
             self.currentcmd = self.commandlist.pop(0)
             cmd,val = self.currentcmd
-            print(self.currentcmd)
+            
             if cmd=="right":
                 self.rotationgoal = self.rotation - val*pi/180
                 
@@ -201,10 +201,10 @@ class Turtle(Sprite):
     def heading(self):
         return self.combinedhead 
     
-    '''def forward(self, x):
-        self.vx=1
-        self.vy=1           #will depend on angle?
-        self.vr=0'''
+    def forward(self):
+        pass
+   
+        
    
     
     
@@ -215,8 +215,7 @@ alex.lt(100)
 alex.lt(100)
 alex.rt(10)
 alex.rt(100)
-print(alex.commandlist)
-print(alex.heading())
+
 
 '''myapp.run()
 
