@@ -80,11 +80,11 @@ class Turtle(Sprite):
         
         if not self.rotationgoal is None:
             if self.rotationgoal-self.rotation < 0:         #right turn
-                    self.rotation += self.vr
-                    if self.rotation <= self.rotationgoal:
-                        self.vr=0
-                        self.rotation=self.rotationgoal
-                        self.rotationgoal=None
+                self.rotation += self.vr
+                if self.rotation <= self.rotationgoal:
+                    self.vr=0
+                    self.rotation=self.rotationgoal
+                    self.rotationgoal=None
                         
             if self.rotationgoal-self.rotation > 0:         #left turn
                 self.rotation += self.vr
@@ -209,7 +209,9 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen()
 alex=Turtle()
-alex.rt(100)
+alex.lt(100)
+alex.lt(100)
+alex.lt(10)
 print(alex.commandlist)
 print(alex.heading())
 
