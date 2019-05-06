@@ -225,8 +225,8 @@ alex.lt(100)
 alex.lt(100)
 alex.rt(10)
 alex.rt(100)
-
-print(self.commandlist)
+alex.fd(2)
+print(alex.commandlist)
 '''myapp.run()
 
 
