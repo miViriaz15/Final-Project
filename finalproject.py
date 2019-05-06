@@ -201,10 +201,20 @@ class Turtle(Sprite):
     def heading(self):
         return self.combinedhead 
     
-    def forward(self):
+    def forward(self,x):
         pass
+    
+    def fd(self,x):
+        return self.forward(x)
+    
+    def backward(self,x):
+        pass
+    
+    def bk(self,x):
+        return self.backward(x)
    
-        
+    def back(self,x):
+        return self.backward(x)   
    
     
     
