@@ -202,13 +202,13 @@ class Turtle(Sprite):
         return self.combinedhead 
     
     def forward(self,x):
-        pass
+        self.commandlist.append(("forward",x))
     
     def fd(self,x):
         return self.forward(x)
     
     def backward(self,x):
-        pass
+        self.commandlist.append(("backward",x))
     
     def bk(self,x):
         return self.backward(x)
@@ -226,7 +226,7 @@ alex.lt(100)
 alex.rt(10)
 alex.rt(100)
 
-
+print(self.commandlist)
 '''myapp.run()
 
 
