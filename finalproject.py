@@ -48,7 +48,7 @@ class Turtle(Sprite):
         self.rotationgoal=None
         
         self.vr = 0
-        self.fxcenter = 1/3
+        self.fxcenter = 1
         self.fycenter = 1/2
        
         self.commandlist = []
@@ -221,10 +221,10 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen()
 alex=Turtle()
-alex.lt(100)
-alex.lt(100)
+alex.lt(300)
+#alex.lt(100)
 alex.rt(10)
-alex.rt(100)
+#alex.rt(100)
 alex.fd(2)
 print(alex.commandlist)
 '''myapp.run()
