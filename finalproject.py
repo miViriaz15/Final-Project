@@ -51,6 +51,9 @@ class Turtle(Sprite):
         self.vr = 0
         self.fxcenter = 1
         self.fycenter = 1/2
+        
+        self.vx = 0
+        self.vy = 0
        
         self.commandlist = []
         self.currentcmd = None
@@ -65,10 +68,15 @@ class Turtle(Sprite):
                 self.vr = -0.06
                 if self.rotationgoal==None:
                     self.currentcmd=None
+            
             if cmd=="left":
                 self.vr = 0.06
                 if self.rotationgoal==None:
                     self.currentcmd=None   
+            
+            if cmd=="forward":
+                self
+        
         
         elif self.commandlist:
             self.currentcmd = self.commandlist.pop(0)
