@@ -61,11 +61,11 @@ class Turtle(Sprite):
         if self.currentcmd:
             cmd,val = self.currentcmd
             if cmd=="right":
-                self.vr = -0.05
+                self.vr = -0.06
                 if self.rotationgoal==None:
                     self.currentcmd=None
             if cmd=="left":
-                self.vr = 0.05
+                self.vr = 0.06
                 if self.rotationgoal==None:
                     self.currentcmd=None   
         
