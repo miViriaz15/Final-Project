@@ -46,6 +46,7 @@ class Turtle(Sprite):
         startturtle=PolygonAsset([(5,5),(20,13),(5,21),(10,13),(5,5)],self.thinlineblack, self.black)
         super().__init__(startturtle, screencenter)
         self.rotationgoal=None
+        self.forwardgoal=None
         
         self.vr = 0
         self.fxcenter = 1
@@ -78,6 +79,9 @@ class Turtle(Sprite):
                 
             if cmd=="left":
                 self.rotationgoal = self.rotation + val*pi/180
+                
+            if cmd=="forward":
+                self.forwardgoal = val
         
         if not self.rotationgoal is None:
         
