@@ -134,7 +134,7 @@ class Turtle(Sprite):
                 else:
                     self.x -= self.vx
                     self.y -= self.vy
-                    self.distance = ((self.x-(self.width/2))**2+(self.y-(self.height/2))**2)**(1/2)
+                    self.distance = ((self.x-(Screen.width/2))**2+(self.y-(Screen.height/2))**2)**(1/2)
                     print(self.distance)
             
             if self.distance==self.forwardgoal:
@@ -267,7 +267,7 @@ alex.lt(90)
 #alex.lt(100)
 #alex.rt(10)
 #alex.rt(100)
-alex.fd(1000)
+alex.fd(100)
 print(alex.commandlist)
 '''myapp.run()
 
