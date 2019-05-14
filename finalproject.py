@@ -79,7 +79,6 @@ class Turtle(Sprite):
             if cmd=="forward":
                 self.forwardgoal = val
                 self.vx=cos(self.rotation)
-                print(self.vx)
                 self.vy=sin(self.rotation)
                 if self.forwardgoal==None:
                     self.currentcmd=None
@@ -126,12 +125,14 @@ class Turtle(Sprite):
            
             if self.forwardgoal - self.distance > 0:
                 if self.distance + (self.vx**2+self.vy**2)**1/2 >= self.forwardgoal:
+                    print("whoops")
                     self.vx = 0
                     self.vy = 0
                     self.x = (self.forwardgoal - self.distance)*cos(self.rotation)
                     self.y = (self.forwardgoal - self.distance)*sin(self.rotation)
                     self.distance = (self.x**2+self.y**2)**1/2
                 else:
+                    print("hellllooo")
                     self.x -= self.vx
                     self.y -= self.vy
                     self.distance = (self.x**2+self.y**2)**1/2
