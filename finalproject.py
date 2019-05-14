@@ -136,7 +136,7 @@ class Turtle(Sprite):
                     print("hellllooo")
                     self.x -= self.vx
                     self.y -= self.vy
-                    self.distance = ((self.x)**2+(self.y)**2)**(1/2)
+                    self.distance = ((self.x-(width/2))**2+(self.y-(height/2))**2)**(1/2)
                     print(self.distance)
             
             if self.distance==self.forwardgoal:
