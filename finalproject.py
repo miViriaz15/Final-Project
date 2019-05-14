@@ -4,7 +4,7 @@ https://docs.python.org/3.3/library/turtle.html?highlight=turtle
 '''
 
 from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Frame, PolygonAsset, EllipseAsset, CircleAsset
-from math import pi
+import math
 
 #myapp = App()
 #defining colors
@@ -76,6 +76,8 @@ class Turtle(Sprite):
             
             if cmd=="forward":
                 self.forwardgoal = val
+                self.vx=cos(self.rotation)
+                self.vy=sin(self.rotation)
         
         
         elif self.commandlist:
@@ -101,7 +103,6 @@ class Turtle(Sprite):
                 else:
                     self.rotation += self.vr
                 
-                    
                         
             elif self.rotationgoal-self.rotation > 0:         #left turn
                 if self.rotation + self.vr >= self.rotationgoal:
