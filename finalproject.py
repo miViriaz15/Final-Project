@@ -3,7 +3,8 @@ miViriaz15 Final Project - turtle graphics in ggame
 https://docs.python.org/3.3/library/turtle.html?highlight=turtle
 '''
 
-from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Frame, PolygonAsset, EllipseAsset, CircleAsset, LineSegment
+from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Frame, PolygonAsset, EllipseAsset, CircleAsset
+from ggame.line import LineSegment
 from math import pi, cos, sin 
 
 #myapp = App()
