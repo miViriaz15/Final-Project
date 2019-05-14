@@ -3,7 +3,7 @@ miViriaz15 Final Project - turtle graphics in ggame
 https://docs.python.org/3.3/library/turtle.html?highlight=turtle
 '''
 
-from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Frame, PolygonAsset, EllipseAsset, CircleAsset
+from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Frame, PolygonAsset, EllipseAsset, CircleAsset, LineSegment
 from math import pi, cos, sin 
 
 #myapp = App()
@@ -134,6 +134,7 @@ class Turtle(Sprite):
                 else:
                     self.x -= self.vx
                     self.y -= self.vy
+                    line = LineSegment((self.x,self.y), (self.x - self.vx, self.y - self.vy), positioning = "physical")
                     self.distance = ((self.x-(Screen.width/2))**2+(self.y-(Screen.height/2))**2)**(1/2)
                     
             
