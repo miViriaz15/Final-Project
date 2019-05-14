@@ -75,7 +75,7 @@ class Turtle(Sprite):
                     self.currentcmd=None   
             
             if cmd=="forward":
-                self
+                self.forwardgoal = val
         
         
         elif self.commandlist:
@@ -94,18 +94,22 @@ class Turtle(Sprite):
         if not self.rotationgoal is None:
         
             if self.rotationgoal-self.rotation < 0:         #right turn
-                self.rotation += self.vr
-                if self.rotation <= self.rotationgoal:
+                if self.rotation + self.vr <= self.rotationgoal:
                     self.vr=0
                     self.rotation=self.rotationgoal
                     self.rotationgoal=None
+                else:
+                    self.rotation += self.vr
+                
+                    
                         
             elif self.rotationgoal-self.rotation > 0:         #left turn
-                self.rotation += self.vr
-                if self.rotation >= self.rotationgoal:
+                if self.rotation + self.vr >= self.rotationgoal:
                     self.vr=0
                     self.rotation=self.rotationgoal
                     self.rotationgoal=None
+                else:
+                    self.rotation += self.vr
                         
             if self.rotation == self.rotationgoal:
                 self.vr=0
@@ -233,9 +237,9 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen()
 alex=Turtle()
-alex.lt(300)
+alex.lt(90)
 #alex.lt(100)
-alex.rt(10)
+#alex.rt(10)
 #alex.rt(100)
 alex.fd(2)
 print(alex.commandlist)
