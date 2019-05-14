@@ -4,7 +4,7 @@ https://docs.python.org/3.3/library/turtle.html?highlight=turtle
 '''
 
 from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Frame, PolygonAsset, EllipseAsset, CircleAsset
-from math import pi, cos, sin, 
+from math import pi, cos, sin 
 
 #myapp = App()
 #defining colors
@@ -80,6 +80,7 @@ class Turtle(Sprite):
                 self.forwardgoal = val
                 self.vx=cos(self.rotation)
                 self.vy=sin(self.rotation)
+                
         
         
         elif self.commandlist:
@@ -118,7 +119,7 @@ class Turtle(Sprite):
                 self.vr = 0
                 self.rotationgoal=None
         
-        if not self.forwardgoal is None:
+        if not self.forwardgoal is None: #forward
             
             if self.forwardgoal - self.distance > 0:
                 if self.distance + (self.vx**2+self.vy**2)**1/2 >= self.forwardgoal:
@@ -126,11 +127,16 @@ class Turtle(Sprite):
                     self.vy = 0
                     self.x = (self.forwardgoal - self.distance)*cos(self.rotation)
                     self.y = (self.forwardgoal - self.distance)*sin(self.rotation)
+                    self.distance = (self.x**2+self.y**2)**1/2
                 else:
                     self.x -= self.vx
                     self.y -= self.vy
                     self.distance = (self.x**2+self.y**2)**1/2
             
+            if self.distance==self.forwardgoal:
+                self.vx = 0
+                self.vy = 0
+                self.forwardgoal=None
             
         
 
