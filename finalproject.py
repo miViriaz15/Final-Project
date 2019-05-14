@@ -124,19 +124,17 @@ class Turtle(Sprite):
         if not self.forwardgoal is None: #forward
             
             if self.forwardgoal - self.distance > 0:
-                print("hi")
+                
                 if self.distance + (self.vx**2+self.vy**2)**1/2 >= self.forwardgoal:
-                    print("whoops")
                     self.vx = 0
                     self.vy = 0
                     self.x = (self.forwardgoal - self.distance)*cos(self.rotation)
                     self.y = (self.forwardgoal - self.distance)*sin(self.rotation)
                     self.distance = (self.x**2+self.y**2)**1/2
                 else:
-                    print("hellllooo")
                     self.x -= self.vx
                     self.y -= self.vy
-                    self.distance = ((self.x-(width/2))**2+(self.y-(height/2))**2)**(1/2)
+                    self.distance = ((self.x-(self.width/2))**2+(self.y-(self.height/2))**2)**(1/2)
                     print(self.distance)
             
             if self.distance==self.forwardgoal:
