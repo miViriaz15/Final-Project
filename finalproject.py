@@ -266,10 +266,12 @@ class Turtle(Sprite):
 Screen()
 alex=Turtle()
 alex.lt(120)
-#alex.lt(100)
+alex.lt(100)
+
+alex.fd(100)
 #alex.rt(10)
 #alex.rt(100)
-alex.fd(100)
+#alex.fd(40)
 print(alex.commandlist)
 '''myapp.run()
 
