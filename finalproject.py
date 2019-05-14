@@ -4,7 +4,7 @@ https://docs.python.org/3.3/library/turtle.html?highlight=turtle
 '''
 
 from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Frame, PolygonAsset, EllipseAsset, CircleAsset
-from math import pi, cos, sin
+from math import pi, cos, sin, 
 
 #myapp = App()
 #defining colors
@@ -58,6 +58,8 @@ class Turtle(Sprite):
         self.commandlist = []
         self.currentcmd = None
         
+        self.distance = 0
+        
         self.combinedhead=0
         
     def step(self):
@@ -95,16 +97,16 @@ class Turtle(Sprite):
         
         if not self.rotationgoal is None:    #TURNS
         
-            if self.rotationgoal-self.rotation < 0:         #right turn
+            if self.rotationgoal - self.rotation < 0:         #right turn
                 if self.rotation + self.vr <= self.rotationgoal:
-                    self.vr=0
+                    self.vr = 0
                     self.rotation=self.rotationgoal
                     self.rotationgoal=None
                 else:
                     self.rotation += self.vr
                 
                         
-            elif self.rotationgoal-self.rotation > 0:         #left turn
+            elif self.rotationgoal - self.rotation > 0:         #left turn
                 if self.rotation + self.vr >= self.rotationgoal:
                     self.vr=0
                     self.rotation=self.rotationgoal
@@ -113,14 +115,23 @@ class Turtle(Sprite):
                     self.rotation += self.vr
                         
             if self.rotation == self.rotationgoal:
-                self.vr=0
+                self.vr = 0
                 self.rotationgoal=None
         
         if not self.forwardgoal is None:
             
-            self.x += self.vx
-            self.y += self.vy
-        
+            if self.forwardgoal - self.distance > 0:
+                if self.distance + (self.vx**2+self.vy**2)**1/2 >= self.forwardgoal:
+                    self.vx = 0
+                    self.vy = 0
+                    self.x = 
+                    self.y = 
+                else:
+                    self.x -= self.vx
+                    self.y -= self.vy
+                    self.distance = (self.x**2+self.y**2)**1/2
+            
+            
         
 
         
@@ -246,7 +257,7 @@ alex.lt(90)
 #alex.lt(100)
 #alex.rt(10)
 #alex.rt(100)
-alex.fd(2)
+alex.fd(100)
 print(alex.commandlist)
 '''myapp.run()
 
