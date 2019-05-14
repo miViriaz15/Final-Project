@@ -79,7 +79,10 @@ class Turtle(Sprite):
             if cmd=="forward":
                 self.forwardgoal = val
                 self.vx=cos(self.rotation)
+                print(self.vx)
                 self.vy=sin(self.rotation)
+                if self.forwardgoal==None:
+                    self.currentcmd=None
                 
         
         
@@ -120,7 +123,7 @@ class Turtle(Sprite):
                 self.rotationgoal=None
         
         if not self.forwardgoal is None: #forward
-            
+           
             if self.forwardgoal - self.distance > 0:
                 if self.distance + (self.vx**2+self.vy**2)**1/2 >= self.forwardgoal:
                     self.vx = 0
