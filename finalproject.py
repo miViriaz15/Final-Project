@@ -129,8 +129,10 @@ class Turtle(Sprite):
                 if self.distance + (self.vx**2+self.vy**2)**1/2 >= self.forwardgoal:
                     self.vx = 0
                     self.vy = 0
-                    self.x = (self.forwardgoal - self.distance)*cos(self.rotation)
-                    self.y = (self.forwardgoal - self.distance)*sin(self.rotation)
+
+                    self.x = (self.forwardgoal - self.distance)*cos(self.rotation)+self.x
+                    self.y = (self.forwardgoal - self.distance)*sin(self.rotation)+self.y
+    
                     self.distance = (self.x**2+self.y**2)**1/2
                 else:
                     self.x -= self.vx
@@ -265,7 +267,7 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen()
 alex=Turtle()
-alex.lt(130)
+alex.rt(220)
 
 alex.fd(100)
 #alex.rt(10)
