@@ -66,6 +66,7 @@ class Turtle(Sprite):
     def step(self):
         
         if self.currentcmd:
+            print(self.currentcmd)
             cmd,val = self.currentcmd
             if cmd=="right":
                 self.vr = -0.06
@@ -82,14 +83,16 @@ class Turtle(Sprite):
                 self.vx=-1*cos(self.rotation)
                 self.vy=sin(self.rotation)
                 if self.forwardgoal==None:
+                    
                     self.currentcmd=None
-                
+                    print(self.currentcmd)
         
         
         elif self.commandlist:
             self.currentcmd = self.commandlist.pop(0)
             cmd,val = self.currentcmd
-            
+            print(self.commandlist)
+            print(self.currentcmd)
             if cmd=="right":
                 self.rotationgoal = self.rotation - val*pi/180
                 
@@ -134,6 +137,8 @@ class Turtle(Sprite):
                     self.y = (self.forwardgoal - self.distance)*sin(self.rotation)+self.y
     
                     self.distance = (self.x**2+self.y**2)**1/2
+                    self.forwardgoal=None
+                    print(self.forwardgoal)
                 else:
                     self.x -= self.vx
                     self.y -= self.vy
@@ -145,7 +150,7 @@ class Turtle(Sprite):
                 self.vx = 0
                 self.vy = 0
                 self.forwardgoal=None
-            
+                
         
 
         
