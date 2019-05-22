@@ -79,7 +79,7 @@ class Turtle(Sprite):
                     self.currentcmd=None   
             
             if cmd=="forward":
-                self.forwardgoal = val
+                #self.forwardgoal = val
                 self.vx=-1*cos(self.rotation)
                 self.vy=sin(self.rotation)
                 if self.forwardgoal==None:
@@ -98,7 +98,7 @@ class Turtle(Sprite):
                 self.rotationgoal = self.rotation + val*pi/180
                 
             if cmd=="forward":
-                self.forwardgoal = val
+                self.forwardgoal = val + ((self.x-(Screen.width/2))**2+(self.y-(Screen.height/2))**2)**(1/2)  
         
         if not self.rotationgoal is None:    #TURNS
         
@@ -134,11 +134,11 @@ class Turtle(Sprite):
                     self.vx = 0
                     self.vy = 0
 
-                    self.x = (self.forwardgoal - self.distance)*cos(self.rotation)+self.x
-                    self.y = (self.forwardgoal - self.distance)*sin(self.rotation)+self.y
-    
-                    self.distance = (self.x**2+self.y**2)**1/2
-                   
+                    self.x = (self.forwardgoal - self.distance)*cos(self.rotation) + self.x
+                    self.y  = (self.forwardgoal - self.distance)*sin(self.rotation) + self.y
+                    
+                    self.distance = 0
+                    #(self.x**2+self.y**2)**1/2
                     self.forwardgoal=None
                     self.currentcmd=None
                 else:
@@ -153,6 +153,8 @@ class Turtle(Sprite):
                 self.vy = 0
                 self.forwardgoal=None
                 self.currentcmd=None
+                print(self.x, self.y)
+                print(((self.x-(Screen.width/2))**2+(self.y-(Screen.height/2))**2)**(1/2))
         
 
         
@@ -274,10 +276,11 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen()
 alex=Turtle()
-alex.fd(45)
-
-alex.fd(45)
-
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)
 
 
 
