@@ -281,6 +281,12 @@ alex.lt(60)
 alex.fd(100)
 alex.lt(60)
 alex.fd(100)
+alex.lt(60)
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)
 
 
 
