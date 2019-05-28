@@ -5,7 +5,7 @@ https://docs.python.org/3.3/library/turtle.html?highlight=turtle
 
 from ggame import App, RectangleAsset, ImageAsset, Sprite, LineStyle, Color, Frame, PolygonAsset, EllipseAsset, CircleAsset
 from ggame.line import LineSegment
-from math import pi, cos, sin 
+from math import pi, cos, sin, sqrt
 
 #myapp = App()
 #defining colors
@@ -61,7 +61,8 @@ class Turtle(Sprite):
         
         self.distance = 0
         
-        self.combinedhead=0
+        self.combinedhead = 0
+        
         
     def step(self):
         
@@ -98,8 +99,11 @@ class Turtle(Sprite):
                 self.rotationgoal = self.rotation + val*pi/180
                 
             if cmd=="forward":
-                self.forwardgoal = val + ((self.x-(Screen.width/2))**2+(self.y-(Screen.height/2))**2)**(1/2)  
-        
+
+                num = ((self.x-(Screen.width/2))**2+(self.y-(Screen.height/2))**2)**(1/2)
+                self.forwardgoal = sqrt(num**2+val**2-2*num*val*cos(pi-self.rotation))    
+                
+                print(self.forwardgoal)
         if not self.rotationgoal is None:    #TURNS
         
             if self.rotationgoal - self.rotation < 0:         #right turn
@@ -276,7 +280,7 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen()
 alex=Turtle()
-alex.fd(100)
+alex.fd(90)
 alex.lt(60)
 alex.fd(100)
 alex.lt(60)
