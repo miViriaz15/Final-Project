@@ -342,7 +342,7 @@ alex.fd(100)'''
 
 
 
-print(alex.commandlist)
+
 '''myapp.run()
 
 
