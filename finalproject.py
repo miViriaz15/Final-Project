@@ -318,7 +318,7 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen()
 alex=Turtle()
-alex.bk(100)
+'''alex.bk(100)
 alex.rt(60)
 alex.bk(100)
 alex.rt(60)
@@ -329,8 +329,6 @@ alex.rt(60)
 alex.bk(100)
 alex.rt(60)
 alex.bk(100)
-'''alex.lt(60)
-alex.fd(100)
 alex.lt(60)
 alex.fd(100)
 alex.lt(60)
@@ -338,8 +336,10 @@ alex.fd(100)
 alex.lt(60)
 alex.fd(100)
 alex.lt(60)
-alex.fd(100)'''
-
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)
+'''
 
 
 
