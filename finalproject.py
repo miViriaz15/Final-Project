@@ -104,7 +104,6 @@ class Turtle(Sprite):
             if cmd=="forward":
 
                 self.forwardgoal =  val
-                
                 #sqrt(num**2+val**2-2*num*val*cos(pi-self.rotation))
                 print(self.forwardgoal)
                 
@@ -156,7 +155,7 @@ class Turtle(Sprite):
                     self.distance = ((self.x-self.fdx)**2+(self.y-self.fdy)**2)**(1/2)
                     
             
-            if self.distance==self.forwardgoal:
+            else:
                 self.vx = 0
                 self.vy = 0
                 self.forwardgoal=None
@@ -286,17 +285,17 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen()
 alex=Turtle()
-alex.fd(90)
-alex.lt(60)
 alex.fd(100)
-alex.lt(60)
+#alex.lt(60)
+alex.fd(0)
+#alex.lt(60)
 alex.fd(100)
-alex.lt(60)
-alex.fd(100)
-alex.lt(60)
-alex.fd(100)
-alex.lt(60)
-alex.fd(100)
+#alex.lt(60)
+#alex.fd(100)
+#alex.lt(60)
+#alex.fd(100)
+#alex.lt(60)
+#alex.fd(100)
 
 
 
