@@ -46,8 +46,9 @@ class Turtle(Sprite):
         screencenter=(width/2,height/2)  #finds a tuple for the center of the screen
         startturtle=PolygonAsset([(5,5),(20,13),(5,21),(10,13),(5,5)],self.thinlineblack, self.black)
         super().__init__(startturtle, screencenter)
-        self.rotationgoal=None
-        self.forwardgoal=None
+        self.rotationgoal = None
+        self.forwardgoal = None
+        self.bkgoal = None
         
         self.vr = 0
         self.fxcenter = 1
@@ -83,13 +84,16 @@ class Turtle(Sprite):
                     self.currentcmd=None   
             
             if cmd=="forward":
-                #self.forwardgoal = val
                 self.vx=-1*cos(self.rotation)
                 self.vy=sin(self.rotation)
                 if self.forwardgoal==None:
                     self.currentcmd=None
                     
-        
+            if cmd=="backward":
+                self.vx=-cos(self.rotation)
+                self.vy=sin(self.rotation)
+                if self.bkgoal==None:
+                    self.currentcmd=None
         
         elif self.commandlist:
             self.currentcmd = self.commandlist.pop(0)
@@ -102,10 +106,10 @@ class Turtle(Sprite):
                 self.rotationgoal = self.rotation + val*pi/180
                 
             if cmd=="forward":
-
                 self.forwardgoal =  val
                 
-                
+            if cmd=="backward":
+                self.bkgoal =  val    
                 
         if not self.rotationgoal is None:    #TURNS
         
@@ -164,8 +168,36 @@ class Turtle(Sprite):
                 self.fdy = self.y
                 self.distance = 0
                 
-                #print(self.fdx)
-                #print(self.fdy)
+        if not self.bkgoal is None: #backward
+            
+            if self.bkgoal - self.distance > 0:
+                
+                if self.distance + (self.vx**2+self.vy**2)**1/2 >= self.bkgoal:
+                    self.vx = 0
+                    self.vy = 0
+
+                    self.x = (self.bkgoal - self.distance)*cos(self.rotation) + self.x
+                    self.y  = (self.bkgoal - self.distance)*sin(self.rotation) + self.y
+                    
+                    self.distance = 0
+                    
+                    self.bkgoal=None
+                    self.currentcmd=None
+                else:
+                    self.x += self.vx
+                    self.y += self.vy
+                    line = LineSegment((self.x,self.y), (self.x - self.vx, self.y - self.vy), positioning = "physical")
+                    self.distance = ((self.x-self.fdx)**2+(self.y-self.fdy)**2)**(1/2)
+                    
+            
+            else:
+                self.vx = 0
+                self.vy = 0
+                self.bkgoal = None
+                self.currentcmd = None
+                self.fdx = self.x
+                self.fdy = self.y
+                self.distance = 0   
 
         
     def right(self,x):
@@ -286,6 +318,18 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen()
 alex=Turtle()
+alex.bk(100)
+alex.rt(60)
+alex.bk(100)
+alex.rt(60)
+alex.bk(100)
+alex.rt(60)
+alex.bk(100)
+alex.rt(60)
+alex.bk(100)
+alex.rt(60)
+alex.bk(100)
+'''alex.lt(60)
 alex.fd(100)
 alex.lt(60)
 alex.fd(100)
@@ -294,9 +338,7 @@ alex.fd(100)
 alex.lt(60)
 alex.fd(100)
 alex.lt(60)
-alex.fd(100)
-alex.lt(60)
-alex.fd(100)
+alex.fd(100)'''
 
 
 
