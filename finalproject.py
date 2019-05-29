@@ -105,7 +105,7 @@ class Turtle(Sprite):
 
                 self.forwardgoal =  val
                 
-                print(self.forwardgoal)
+                
                 
         if not self.rotationgoal is None:    #TURNS
         
@@ -158,12 +158,14 @@ class Turtle(Sprite):
             else:
                 self.vx = 0
                 self.vy = 0
-                self.forwardgoal=None
-                self.currentcmd=None
+                self.forwardgoal = None
+                self.currentcmd = None
                 self.fdx = self.x
                 self.fdy = self.y
-                print(self.fdx)
-                print(self.fdy)
+                self.distance = 0
+                
+                #print(self.fdx)
+                #print(self.fdy)
 
         
     def right(self,x):
@@ -285,16 +287,16 @@ class Turtle(Sprite):
 Screen()
 alex=Turtle()
 alex.fd(100)
-#alex.lt(60)
-alex.fd(0)
-#alex.lt(60)
+alex.lt(60)
 alex.fd(100)
-#alex.lt(60)
-#alex.fd(100)
-#alex.lt(60)
-#alex.fd(100)
-#alex.lt(60)
-#alex.fd(100)
+alex.lt(60)
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)
 
 
 
