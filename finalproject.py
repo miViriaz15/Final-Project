@@ -63,6 +63,9 @@ class Turtle(Sprite):
         
         self.combinedhead = 0
         
+        self.fdx = width/2
+        self.fdy = height/2
+        
         
     def step(self):
         
@@ -100,10 +103,11 @@ class Turtle(Sprite):
                 
             if cmd=="forward":
 
-                num = ((self.x-(Screen.width/2))**2+(self.y-(Screen.height/2))**2)**(1/2)
-                self.forwardgoal = sqrt(num**2+val**2-2*num*val*cos(pi-self.rotation))    
+                self.forwardgoal =  val
                 
+                #sqrt(num**2+val**2-2*num*val*cos(pi-self.rotation))
                 print(self.forwardgoal)
+                
         if not self.rotationgoal is None:    #TURNS
         
             if self.rotationgoal - self.rotation < 0:         #right turn
@@ -149,7 +153,7 @@ class Turtle(Sprite):
                     self.x -= self.vx
                     self.y -= self.vy
                     line = LineSegment((self.x,self.y), (self.x - self.vx, self.y - self.vy), positioning = "physical")
-                    self.distance = ((self.x-(Screen.width/2))**2+(self.y-(Screen.height/2))**2)**(1/2)
+                    self.distance = ((self.x-self.fdx)**2+(self.y-self.fdy)**2)**(1/2)
                     
             
             if self.distance==self.forwardgoal:
@@ -157,6 +161,8 @@ class Turtle(Sprite):
                 self.vy = 0
                 self.forwardgoal=None
                 self.currentcmd=None
+                self.fdx = self.x
+                self.fdy = self.y
                 print(self.x, self.y)
                 print(((self.x-(Screen.width/2))**2+(self.y-(Screen.height/2))**2)**(1/2))
         
