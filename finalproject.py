@@ -104,7 +104,7 @@ class Turtle(Sprite):
             if cmd=="forward":
 
                 self.forwardgoal =  val
-                #sqrt(num**2+val**2-2*num*val*cos(pi-self.rotation))
+                
                 print(self.forwardgoal)
                 
         if not self.rotationgoal is None:    #TURNS
@@ -145,7 +145,7 @@ class Turtle(Sprite):
                     self.y  = (self.forwardgoal - self.distance)*sin(self.rotation) + self.y
                     
                     self.distance = 0
-                    #(self.x**2+self.y**2)**1/2
+                    
                     self.forwardgoal=None
                     self.currentcmd=None
                 else:
@@ -162,9 +162,8 @@ class Turtle(Sprite):
                 self.currentcmd=None
                 self.fdx = self.x
                 self.fdy = self.y
-                print(self.x, self.y)
-                print(((self.x-(Screen.width/2))**2+(self.y-(Screen.height/2))**2)**(1/2))
-        
+                print(self.fdx)
+                print(self.fdy)
 
         
     def right(self,x):
