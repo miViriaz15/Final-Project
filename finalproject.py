@@ -317,18 +317,22 @@ class Turtle(Sprite):
     
     #position, direction, penstate, color
 Screen() # Creates a playground for turtles
-#alex=Turtle()
+
+turtle=Turtle()
 
 
+turtle.forward(100)
+turtle.lt(120)
+turtle.bk(39)
+turtle.rt(180)
 
-'''
-distance=20 #spiral
+'''distance=20 #spiral
 
 for i in range(17):
     bob.forward(distance)
     bob.left(90)
-    distance=distance+30
-'''
+    distance=distance+30'''
+
 
 
 
@@ -356,7 +360,7 @@ alex.lt(60)
 alex.fd(100)'''
 
 
-
+print(alex.commandlist)
 
 '''myapp.run()
 
