@@ -85,7 +85,7 @@ class Turtle(Sprite):
             
             if cmd=="forward":
                 self.vx=-1*cos(self.rotation)
-                self.vy=*sin(self.rotation)
+                self.vy=sin(self.rotation)
                 if self.forwardgoal==None:
                     self.currentcmd=None
                     
