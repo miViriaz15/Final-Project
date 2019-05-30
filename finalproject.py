@@ -74,12 +74,12 @@ class Turtle(Sprite):
             
             cmd,val = self.currentcmd
             if cmd=="right":
-                self.vr = -0.07
+                self.vr = -0.06
                 if self.rotationgoal==None:
                     self.currentcmd=None
             
             if cmd=="left":
-                self.vr = 0.07
+                self.vr = 0.06
                 if self.rotationgoal==None:
                     self.currentcmd=None   
             
@@ -320,15 +320,51 @@ Screen() # Creates a playground for turtles
 #alex=Turtle()
 
 
-     
-bob = Turtle()     #Bob is our turtle
+turtle = Turtle()     #Bob is our turtle
 
-distance=20
+turtle.left(20)
+
+turtle.forward(50)
+turtle.left(90)
+turtle.forward(50)
+turtle.left(90)
+turtle.forward(50)
+turtle.left(90)
+turtle.forward(50)
+turtle.left(90)
+
+turtle.left(30)
+
+turtle.forward(50)
+turtle.left(90)
+turtle.forward(50)
+turtle.left(90)
+turtle.forward(50)
+turtle.left(90)
+turtle.forward(50)
+turtle.left(90)
+
+turtle.left(40)
+
+turtle.forward(50)
+turtle.left(90)
+turtle.forward(50)
+turtle.left(90)
+turtle.forward(50)
+turtle.left(90)
+turtle.forward(50)
+turtle.left(90)
+
+
+'''
+distance=20 #spiral
 
 for i in range(17):
     bob.forward(distance)
     bob.left(90)
     distance=distance+30
+'''
+
 
 
 '''
