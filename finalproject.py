@@ -316,30 +316,44 @@ class Turtle(Sprite):
     
     
     #position, direction, penstate, color
-Screen()
-alex=Turtle()
-'''alex.bk(100)
-alex.rt(60)
-alex.bk(100)
-alex.rt(60)
-alex.bk(100)
-alex.rt(60)
-alex.bk(100)
-alex.rt(60)
-alex.bk(100)
-alex.rt(60)
-alex.bk(100)
-alex.lt(60)
-alex.fd(100)
-alex.lt(60)
-alex.fd(100)
-alex.lt(60)
-alex.fd(100)
-alex.lt(60)
-alex.fd(100)
-alex.lt(60)
-alex.fd(100)
+Screen() # Creates a playground for turtles
+#alex=Turtle()
+
+
+     
+bob = Turtle()     #Bob is our turtle
+
+distance=20
+
+for i in range(17):
+    bob.forward(distance)
+    bob.left(90)
+    distance=distance+30
+
+
 '''
+alex.bk(100)
+alex.rt(60)
+alex.bk(100)
+alex.rt(60)
+alex.bk(100)
+alex.rt(60)
+alex.bk(100)
+alex.rt(60)
+alex.bk(100)
+alex.rt(60)
+alex.bk(100)
+alex.lt(60)
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)'''
+
 
 
 
