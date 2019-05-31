@@ -158,13 +158,10 @@ class Turtle(Sprite):
                     self.forwardgoal=None
                     self.currentcmd=None
                 else:
-                    print('else')
                     self.x -= self.vx
                     self.y -= self.vy
                     line = LineSegment((self.x,self.y), (self.x - self.vx, self.y - self.vy), positioning = "physical")
                     self.distance = ((self.x-self.fdx)**2+(self.y-self.fdy)**2)**(1/2)
-                    if (cmd, val)==("forward",90):
-                        print(self.x, self.y)
                     
             
             else:
@@ -174,10 +171,10 @@ class Turtle(Sprite):
                 self.currentcmd = None
                 self.fdx = self.x
                 self.fdy = self.y
-                print(self.fdx, self.fdy)
+
                 self.distance = 0
-                #print('hi')
-                
+               
+            
         if not self.bkgoal is None: #backward
             
             if self.bkgoal - self.distance > 0:
