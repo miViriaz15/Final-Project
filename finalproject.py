@@ -98,7 +98,7 @@ class Turtle(Sprite):
         elif self.commandlist:
             self.currentcmd = self.commandlist.pop(0)
             cmd,val = self.currentcmd
-            
+            print(cmd, val)
             if cmd=="right":
                 self.rotationgoal = self.rotation - val*pi/180
                 
@@ -107,6 +107,7 @@ class Turtle(Sprite):
                 
             if cmd=="forward":
                 self.forwardgoal =  val
+                
                 
             if cmd=="backward":
                 self.bkgoal =  val    
@@ -139,7 +140,8 @@ class Turtle(Sprite):
                 self.currentcmd = None
         
         if not self.forwardgoal is None: #forward
-            
+            print(self.forwardgoal)
+            print(self.distance)
             if self.forwardgoal - self.distance > 0:
                 
                 if self.distance + (self.vx**2+self.vy**2)**1/2 >= self.forwardgoal:
@@ -150,12 +152,14 @@ class Turtle(Sprite):
                     self.y  = (self.forwardgoal - self.distance)*sin(self.rotation) + self.y
                     
                     self.distance = 0
-                    
+                    #print('hi')
                     self.forwardgoal=None
                     self.currentcmd=None
                 else:
+                    print('else')
                     self.x -= self.vx
                     self.y -= self.vy
+                    #print(self.x, self.y)
                     line = LineSegment((self.x,self.y), (self.x - self.vx, self.y - self.vy), positioning = "physical")
                     self.distance = ((self.x-self.fdx)**2+(self.y-self.fdy)**2)**(1/2)
                     
@@ -167,7 +171,9 @@ class Turtle(Sprite):
                 self.currentcmd = None
                 self.fdx = self.x
                 self.fdy = self.y
+                print(self.fdx, self.fdy)
                 self.distance = 0
+                #print('hi')
                 
         if not self.bkgoal is None: #backward
             
@@ -333,6 +339,16 @@ turtle.forward(50)
 #turtle.left(100)
 turtle.forward(80)
 turtle.bk(20)
+turtle.rt(30)
+turtle.fd(20)
+
+turtle.lt(90)
+turtle.fd(200)
+
+turtle.lt(100)
+turtle.fd(100)
+turtle.lt(90)
+turtle.fd(90)
 '''
 
 distance=20 #spiral
