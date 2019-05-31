@@ -98,7 +98,7 @@ class Turtle(Sprite):
         elif self.commandlist:
             self.currentcmd = self.commandlist.pop(0)
             cmd,val = self.currentcmd
-            print(cmd, val)
+            
             if cmd=="right":
                 self.rotationgoal = self.rotation - val*pi/180
                 
@@ -326,30 +326,35 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen() # Creates a playground for turtles
 
-turtle=Turtle()
+
+import math
+radius=100
+petals=4
 
 
+def draw_arc(b,r):  #bob the turtle,corner-to-corner length (radius) of petal (assume 60 degree central angle of sector for simplicity)
+    c=2*math.pi*r #Circumference of circle
+    ca=c/(360/60)  #Circumference of arc (assume 60 degree central angle of sector as above)
+    n=int(ca/3)+1  #number of segments
+    l=ca/n  #length of segment
+    for i in range(n):
+        b.fd(l)
+        b.lt(360/(n*6))
 
-#turtle.left(20)
+def draw_petal(b,r):
+    draw_arc(b,r)
+    b.lt(180-60)
+    draw_arc(b,r)
 
-turtle.forward(50)
-#turtle.left(90)
-turtle.forward(50)
-#turtle.left(90)
-turtle.forward(50)
-#turtle.left(100)
-turtle.forward(80)
-turtle.bk(20)
-turtle.rt(30)
-turtle.fd(20)
 
-turtle.lt(90)
-turtle.fd(200)
+bob=Turtle()
 
-turtle.lt(100)
-turtle.fd(100)
-turtle.lt(90)
-turtle.fd(90)
+#draw_petal(bob,radius)
+
+for i in range(petals):
+    draw_petal(bob,radius)
+    bob.lt(360/petals)
+
 '''
 
 distance=20 #spiral
@@ -386,7 +391,6 @@ alex.lt(60)
 alex.fd(100)'''
 
 
-print(turtle.commandlist)
 
 '''myapp.run()
 
