@@ -125,17 +125,18 @@ class Turtle(Sprite):
                         
             elif self.rotationgoal - self.rotation > 0:         #left turn
                 if self.rotation + self.vr >= self.rotationgoal:
-                    self.vr=0
-                    self.rotation=self.rotationgoal
-                    self.rotationgoal=None
-                    self.currentcmd=None
+                    self.vr = 0
+                    self.rotation = self.rotationgoal
+                    self.rotationgoal = None
+                    self.currentcmd = None
                 else:
                     self.rotation += self.vr
                         
             if self.rotation == self.rotationgoal:
                 self.vr = 0
-                self.rotationgoal=None
-                self.currentcmd=None
+                self.rotation = self.rotationgoal
+                self.rotationgoal = None
+                self.currentcmd = None
         
         if not self.forwardgoal is None: #forward
             
@@ -321,19 +322,27 @@ Screen() # Creates a playground for turtles
 turtle=Turtle()
 
 
-turtle.forward(100)
-turtle.lt(120)
-turtle.bk(39)
-turtle.rt(180)
 
-'''distance=20 #spiral
+#turtle.left(20)
+
+turtle.forward(50)
+#turtle.left(90)
+turtle.forward(50)
+#turtle.left(90)
+turtle.forward(50)
+#turtle.left(100)
+turtle.forward(80)
+turtle.bk(20)
+'''
+
+distance=20 #spiral
 
 for i in range(17):
-    bob.forward(distance)
-    bob.left(90)
-    distance=distance+30'''
+    turtle.forward(distance)
+    turtle.left(90)
+    distance=distance+30
 
-
+'''
 
 
 '''
@@ -360,7 +369,7 @@ alex.lt(60)
 alex.fd(100)'''
 
 
-print(alex.commandlist)
+print(turtle.commandlist)
 
 '''myapp.run()
 
