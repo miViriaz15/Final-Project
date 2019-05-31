@@ -326,13 +326,26 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen() # Creates a playground for turtles
 
-bob=Turtle()
+painter = Turtle()
+
+for i in range(50):
+    painter.forward(50)
+    painter.left(123) # Let's go counterclockwise this time 
+'''
+star = Turtle()
+
+for i in range(6):
+    star.forward(100)
+    star.right(144)
+
+'''
 
 '''
 import math #PETALS
 radius=100
 petals=4
 
+bob=Turtle()
 def draw_arc(b,r):  #bob the turtle,corner-to-corner length (radius) of petal (assume 60 degree central angle of sector for simplicity)
     c=2*math.pi*r #Circumference of circle
     ca=c/(360/60)  #Circumference of arc (assume 60 degree central angle of sector as above)
