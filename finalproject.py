@@ -150,7 +150,7 @@ class Turtle(Sprite):
 
                     self.x = (self.forwardgoal - self.distance)*cos(self.rotation) + self.x
                     self.y  = (self.forwardgoal - self.distance)*sin(self.rotation) + self.y
-                    
+                    print(self.fdx, self.fdy)
                     self.distance = 0
                     #print('hi')
                     self.forwardgoal=None
@@ -159,7 +159,6 @@ class Turtle(Sprite):
                     print('else')
                     self.x -= self.vx
                     self.y -= self.vy
-                    #print(self.x, self.y)
                     line = LineSegment((self.x,self.y), (self.x - self.vx, self.y - self.vy), positioning = "physical")
                     self.distance = ((self.x-self.fdx)**2+(self.y-self.fdy)**2)**(1/2)
                     
