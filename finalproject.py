@@ -253,6 +253,7 @@ class Turtle(Sprite):
         >>> turtle.right(45)
         >>> turtle.heading()
         337.0'''
+        
         return self.right(x)
 
     def left(self,x):
@@ -300,6 +301,7 @@ class Turtle(Sprite):
         >>> turtle.left(45)
         >>> turtle.heading()
         67.0'''
+        
         return self.left(x)
        
     
@@ -307,9 +309,49 @@ class Turtle(Sprite):
         return self.combinedhead 
     
     def forward(self,x):
+        '''Move the turtle forward by the specified distance.
+        
+        Aliases: forward | fd
+        
+        Argument:
+        distance -- a number (integer or float)
+        
+        Move the turtle forward by the specified distance, in the direction
+        the turtle is headed.
+        
+        Example:
+        >>> position()
+        (0.00, 0.00)
+        >>> forward(25)
+        >>> position()
+        (25.00,0.00)
+        >>> forward(-75)
+        >>> position()
+        (-50.00,0.00)'''
+    
         self.commandlist.append(("forward",x))
     
     def fd(self,x):
+        '''Move the turtle forward by the specified distance.
+        
+        Aliases: forward | fd
+        
+        Argument:
+        distance -- a number (integer or float)
+        
+        Move the turtle forward by the specified distance, in the direction
+        the turtle is headed.
+        
+        Example:
+        >>> position()
+        (0.00, 0.00)
+        >>> forward(25)
+        >>> position()
+        (25.00,0.00)
+        >>> forward(-75)
+        >>> position()
+        (-50.00,0.00)'''
+        
         return self.forward(x)
     
     def backward(self,x):
