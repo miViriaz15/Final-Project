@@ -375,9 +375,43 @@ class Turtle(Sprite):
         self.commandlist.append(("backward",x))
     
     def bk(self,x):
+        '''Move the turtle backward by distance.
+    
+        Aliases: back | backward | bk
+    
+        Argument:
+        distance -- a number
+    
+        Move the turtle backward by distance ,opposite to the direction the
+        turtle is headed. Do not change the turtle's heading.
+    
+        Example:
+        >>> position()
+        (0.00, 0.00)
+        >>> backward(30)
+        >>> position()
+        (-30.00, 0.00)'''
+        
         return self.backward(x)
    
     def back(self,x):
+        '''Move the turtle backward by distance.
+    
+        Aliases: back | backward | bk
+    
+        Argument:
+        distance -- a number
+    
+        Move the turtle backward by distance ,opposite to the direction the
+        turtle is headed. Do not change the turtle's heading.
+    
+        Example:
+        >>> position()
+        (0.00, 0.00)
+        >>> backward(30)
+        >>> position()
+        (-30.00, 0.00)'''
+        
         return self.backward(x)   
    
     
