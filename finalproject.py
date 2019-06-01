@@ -326,11 +326,13 @@ class Turtle(Sprite):
     #position, direction, penstate, color
 Screen() # Creates a playground for turtles
 
-painter = Turtle()
 
-for i in range(50):
-    painter.forward(50)
-    painter.left(123) # Let's go counterclockwise this time 
+'''
+spiral=Turtle()
+for i in range(500): # this "for" loop will repeat these functions 500 times
+    spiral.forward(i)
+    spiral.left(91)
+'''
 '''
 star = Turtle()
 
