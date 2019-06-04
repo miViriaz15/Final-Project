@@ -24,6 +24,8 @@ class Screen(App):
     If none exists at the moment, create a new one and return it,
     else return the existing one'''
     app=None
+    theturtle = None
+
     def __init__(self):
         super().__init__()
         self.run()
@@ -31,10 +33,15 @@ class Screen(App):
         #Screen.app.run()
         
     def step(self):
-        for s in self.getSpritesbyClass(Turtle):
-            s.step()
+        self.theturtle.step()
+        #for s in self.getSpritesbyClass(Turtle):
+        #    s.step()
             
-class Turtle(Sprite):
+    @classmethod
+    def registerturtle(cls, turtle):
+        cls.theturtle = turtle
+            
+class Turtle:
     #defining colors
     black = Color(0x000000, 1.0)
     red = Color(0xF01414, 1.0)
@@ -46,6 +53,7 @@ class Turtle(Sprite):
     thinlineblue = LineStyle(1, blue)
     
     def __init__(self):
+        Screen.registerturtle(self)
         self.currentcolor = self.black
         self.currentthinline = self.thinlineblack
         width=Screen.width
@@ -91,14 +99,14 @@ class Turtle(Sprite):
                     self.currentcmd=None   
             
             if cmd=="forward":
-                self.vx=-1*cos(self.rotation)
-                self.vy=sin(self.rotation)
+                self.vx=-1*cos(self.turtle.rotation)
+                self.vy=sin(self.turtle.rotation)
                 if self.forwardgoal==None:
                     self.currentcmd=None
                     
             if cmd=="backward":
-                self.vx=-cos(self.rotation)
-                self.vy=sin(self.rotation)
+                self.vx=-cos(self.turtle.rotation)
+                self.vy=sin(self.turtle.rotation)
                 if self.bkgoal==None:
                     self.currentcmd=None
             
@@ -167,8 +175,8 @@ class Turtle(Sprite):
                     self.vx = 0
                     self.vy = 0
 
-                    self.turtle.x = (self.forwardgoal - self.distance)*cos(self.rotation) + self.turtle.x
-                    self.turtle.y  = (self.forwardgoal - self.distance)*sin(self.rotation) + self.turtle.y
+                    self.turtle.x = (self.forwardgoal - self.distance)*cos(self.turtle.rotation) + self.turtle.x
+                    self.turtle.y  = (self.forwardgoal - self.distance)*sin(self.turtle.rotation) + self.turtle.y
                     
                     
                     self.distance = 0
@@ -203,8 +211,8 @@ class Turtle(Sprite):
                     self.vx = 0
                     self.vy = 0
 
-                    self.turtle.x = (self.bkgoal - self.distance)*cos(self.rotation) + self.turtle.x
-                    self.turtle.y  = (self.bkgoal - self.distance)*sin(self.rotation) + self.turtle.y
+                    self.turtle.x = (self.bkgoal - self.distance)*cos(self.turtle.rotation) + self.turtle.x
+                    self.turtle.y  = (self.bkgoal - self.distance)*sin(self.turtle.rotation) + self.turtle.y
                     
                     self.distance = 0
                     self.fdx = self.turtle.x
