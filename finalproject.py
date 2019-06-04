@@ -45,11 +45,12 @@ class Turtle(Sprite):
     thinlinered = LineStyle(1, red)
     thinlineblue = LineStyle(1, blue)
     def __init__(self):
-        self.color = black
+        self.color = self.black
+        self.thinline = self.thinlineblack
         width=Screen.width
         height=Screen.height
         screencenter=(width/2,height/2)  #finds a tuple for the center of the screen
-        startturtle=PolygonAsset([(5,5),(20,13),(5,21),(10,13),(5,5)],self.thinlineblack, self.black)
+        startturtle=PolygonAsset([(5,5),(20,13),(5,21),(10,13),(5,5)],self.thinline, self.color)
         super().__init__(startturtle, screencenter)
         self.rotationgoal = None
         self.forwardgoal = None
@@ -437,14 +438,14 @@ for i in range(500): # this "for" loop will repeat these functions 500 times
     spiral.forward(i)
     spiral.left(91)
 '''
-'''
+
 star = Turtle()
 
 for i in range(6):
     star.forward(100)
     star.right(144)
 
-'''
+
 
 '''
 import math #PETALS
