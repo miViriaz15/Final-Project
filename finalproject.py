@@ -73,6 +73,8 @@ class Turtle(Sprite):
         self.fdx = width/2
         self.fdy = height/2
         
+        self.colorgoal = None
+        
         
     def step(self):
         
@@ -101,8 +103,8 @@ class Turtle(Sprite):
                 if self.bkgoal==None:
                     self.currentcmd=None
             
-            if cmd=="color":
-                self.color = val
+            
+                
         
         elif self.commandlist:
             self.currentcmd = self.commandlist.pop(0)
@@ -119,7 +121,15 @@ class Turtle(Sprite):
                 
                 
             if cmd=="backward":
-                self.bkgoal =  val    
+                self.bkgoal =  val 
+                
+            if cmd=="color":
+                if val == "red":
+                    self.color = self.red
+                    self.thinline = self.thinlinered
+                if val == "black":
+                    self.color = self.black
+                    self.thinline = self.thinlineblack
                 
         if not self.rotationgoal is None:    #TURNS
         
