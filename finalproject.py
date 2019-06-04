@@ -50,6 +50,7 @@ class Turtle:
     green = Color(0x54C175, 1.0)
     yellow = Color(0xFAFF44, 1.0)
     orange = Color(0xFFA500, 1.0)
+    cyan = Color(0x00FFFF, 1.0)
     
     thinlinewhite = LineStyle(1, white)
     thinlineblack = LineStyle(1, black)
@@ -58,6 +59,7 @@ class Turtle:
     thinlinegreen = LineStyle(1, green)
     thinlineyellow = LineStyle(1, yellow)
     thinlineorange = LineStyle(1, orange)
+    thinlinecyan = LineStyle(1, cyan)
     
     def __init__(self):
         Screen.registerturtle(self)
