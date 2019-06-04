@@ -59,6 +59,7 @@ class Turtle:
         width=Screen.width
         height=Screen.height
         screencenter=(width/2,height/2)  #finds a tuple for the center of the screen
+        #self.newturtle(self.currentcolor, self.currentthinline)
         startturtle=PolygonAsset([(5,5),(20,13),(5,21),(10,13),(5,5)],self.currentthinline, self.currentcolor)
         self.turtle = Sprite(startturtle, screencenter)
         self.rotationgoal = None
@@ -82,6 +83,21 @@ class Turtle:
         self.fdx = width/2
         self.fdy = height/2
         
+    def newturtle(self, color, line):
+        if self.turtle:
+            x = self.turtle.x
+            y = self.turtle.y
+            r = self.turtle.rotation
+            self.turtle.destroy()
+        else:
+            x = self.turtle.x
+            y = self.turtle.y
+            r = self.turtle.rotation
+            startturtle=PolygonAsset([(5,5),(20,13),(5,21),(10,13),(5,5)],self.currentthinline, self.currentcolor)
+            self.turtle = Sprite(startturtle, screencenter)
+            self.turtle.x = x
+        self.turtle.fxcenter = 1
+        self.turtle.fycenter = 1/2
         
     def step(self):
         
