@@ -116,7 +116,6 @@ class Turtle(Sprite):
             if cmd=="forward":
                 self.forwardgoal =  val
                 
-                
             if cmd=="backward":
                 self.bkgoal =  val 
                 
