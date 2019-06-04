@@ -180,7 +180,7 @@ class Turtle(Sprite):
                 else:
                     self.x -= self.vx
                     self.y -= self.vy
-                    line = LineSegment((self.x,self.y), (self.x - self.vx, self.y - self.vy), positioning = "physical")
+                    line = LineSegment((self.x,self.y), (self.x - self.vx, self.y - self.vy), style = self.currentthinline, positioning = "physical")
                     self.distance = ((self.x-self.fdx)**2+(self.y-self.fdy)**2)**(1/2)
                     
             
