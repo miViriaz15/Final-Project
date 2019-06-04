@@ -497,8 +497,9 @@ for i in range(500): # this "for" loop will repeat these functions 500 times
 
 star = Turtle()
 
+star.color("green")
 
-for i in range(6):
+for i in range(5):
     star.forward(100)
     star.right(144)
 
@@ -531,7 +532,7 @@ for i in range(petals):
     bob.lt(360/4)
 '''
 '''
-
+turtle = Turtle()
 distance=20 #spiral
 
 for i in range(17):
@@ -539,10 +540,10 @@ for i in range(17):
     turtle.left(90)
     distance=distance+30
 
-'''
-
 
 '''
+alex = Turtle()
+'''
 alex.bk(100)
 alex.rt(60)
 alex.bk(100)
@@ -554,17 +555,20 @@ alex.rt(60)
 alex.bk(100)
 alex.rt(60)
 alex.bk(100)
-alex.lt(60)
-alex.fd(100)
-alex.lt(60)
-alex.fd(100)
-alex.lt(60)
-alex.fd(100)
-alex.lt(60)
-alex.fd(100)
-alex.lt(60)
-alex.fd(100)'''
 
+'''
+alex.lt(60)
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)
+alex.lt(60)
+alex.fd(100)
 
 
 '''myapp.run()
