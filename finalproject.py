@@ -45,12 +45,12 @@ class Turtle(Sprite):
     thinlinered = LineStyle(1, red)
     thinlineblue = LineStyle(1, blue)
     def __init__(self):
-        self.color = self.black
-        self.thinline = self.thinlineblack
+        self.currentcolor = self.black
+        self.currentthinline = self.thinlineblack
         width=Screen.width
         height=Screen.height
         screencenter=(width/2,height/2)  #finds a tuple for the center of the screen
-        startturtle=PolygonAsset([(5,5),(20,13),(5,21),(10,13),(5,5)],self.thinline, self.color)
+        startturtle=PolygonAsset([(5,5),(20,13),(5,21),(10,13),(5,5)],self.currentthinline, self.currentcolor)
         super().__init__(startturtle, screencenter)
         self.rotationgoal = None
         self.forwardgoal = None
@@ -102,7 +102,6 @@ class Turtle(Sprite):
                     self.currentcmd=None
             
             
-                
         
         elif self.commandlist:
             self.currentcmd = self.commandlist.pop(0)
@@ -123,14 +122,14 @@ class Turtle(Sprite):
                 
             if cmd=="color":
                 if val == "red":
-                    self.color = self.red
-                    self.thinline = self.thinlinered
+                    self.currentcolor = self.red
+                    self.currentthinline = self.thinlinered
                 if val == "black":
-                    self.color = self.black
-                    self.thinline = self.thinlineblack
+                    self.currentcolor = self.black
+                    self.currentthinline = self.thinlineblack
                 if val == "blue":
-                    self.color = self.blue
-                    self.thinline = self.thinlineblue   
+                    self.currentcolor = self.blue
+                    self.currentthinline = self.thinlineblue   
                 self.currentcmd = None
                 
         if not self.rotationgoal is None:    #TURNS
@@ -452,6 +451,8 @@ for i in range(500): # this "for" loop will repeat these functions 500 times
 '''
 
 star = Turtle()
+
+star.color("red")
 
 for i in range(6):
     star.forward(100)
