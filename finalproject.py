@@ -39,10 +39,13 @@ class Turtle(Sprite):
     black = Color(0x000000, 1.0)
     red = Color(0xF01414, 1.0)
     white = Color(0xFFFFFF, 1.0)
+    blue = Color(0x1464F0, 1.0) 
     thinlinewhite = LineStyle(1, white)
     thinlineblack = LineStyle(1, black)
     thinlinered = LineStyle(1, red)
+    thinlineblue = LineStyle(1, blue)
     def __init__(self):
+        self.color = black
         width=Screen.width
         height=Screen.height
         screencenter=(width/2,height/2)  #finds a tuple for the center of the screen
@@ -96,6 +99,9 @@ class Turtle(Sprite):
                 self.vy=sin(self.rotation)
                 if self.bkgoal==None:
                     self.currentcmd=None
+            
+            if cmd=="color":
+                self.color = val
         
         elif self.commandlist:
             self.currentcmd = self.commandlist.pop(0)
@@ -414,7 +420,10 @@ class Turtle(Sprite):
         >>> position()
         (-30.00, 0.00)'''
         
-        return self.backward(x)   
+        return self.backward(x)
+    
+    def color(self, x):
+        self.commandlist.append(("color",x))
    
     
     
