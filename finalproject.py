@@ -37,9 +37,11 @@ class Screen(App):
 class Turtle(Sprite):
     #defining colors
     black = Color(0x000000, 1.0)
+    red = Color(0xF01414, 1.0)
     white = Color(0xFFFFFF, 1.0)
     thinlinewhite = LineStyle(1, white)
     thinlineblack = LineStyle(1, black)
+    thinlinered = LineStyle(1, red)
     def __init__(self):
         width=Screen.width
         height=Screen.height
