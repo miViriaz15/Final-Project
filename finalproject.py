@@ -497,7 +497,6 @@ for i in range(500): # this "for" loop will repeat these functions 500 times
 
 star = Turtle()
 
-star.color("cyan")
 
 for i in range(6):
     star.forward(100)
