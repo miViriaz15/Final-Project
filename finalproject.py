@@ -162,7 +162,19 @@ class Turtle:
                     self.currentthinline = self.thinlineblack
                 if val == "blue":
                     self.currentcolor = self.blue
-                    self.currentthinline = self.thinlineblue   
+                    self.currentthinline = self.thinlineblue  
+                if val == "green":
+                    self.currentcolor = self.green
+                    self.currentthinline = self.thinlinegreen 
+                if val == "yellow":
+                    self.currentcolor = self.yellow
+                    self.currentthinline = self.thinlineyellow
+                if val == "orange":
+                    self.currentcolor = self.orange
+                    self.currentthinline = self.thinlineorange 
+                if val == "cyan":
+                    self.currentcolor = self.cyan
+                    self.currentthinline = self.thinlinecyan 
                 self.currentcmd = None
                 
         if not self.rotationgoal is None:    #TURNS
